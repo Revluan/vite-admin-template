@@ -38,19 +38,19 @@ export const routes: RouteObject[] = [
         },
       },
       {
+        path: 'resource/compute/detail/:computeID',
+        async lazy() {
+          const { default: Detail } = await import('@/pages/resource/compute/detail');
+          return { Component: Detail };
+        },
+      },
+      {
         path: 'resource/storage',
         async lazy() {
           const { default: Storage } = await import('@/pages/resource/storage');
           return { Component: Storage };
         },
-      },
-      {
-        path: 'list/*',
-        async lazy() {
-          const { default: List } = await import('@/pages/List');
-          return { Component: List };
-        },
-      },
+      } 
     ],
   },
 ];
